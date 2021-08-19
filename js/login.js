@@ -2,16 +2,14 @@
 //que el documento se encuentra cargado, es decir, se encuentran todos los
 //elementos HTML presentes.
 const boton = document.getElementById("submitInformation")
-const mail = document.getElementById("userEmail")
-const password = document.getElementById("userPassword")
+const mail = document.getElementById("userEmail").value
+const password = document.getElementById("password").value
+const miStorage = window.localStorage
 
-function loged()    {
-    if((mail.value != "") && (password.value != ""))    {
-        localStorage.setItem("loged", true);
-        window.location = "index.html";
-    }
-};
-
+const loged = () =>  {
+    miStorage.setItem("loged", true);
+    window.location = "index.html";
+}
 document.addEventListener("DOMContentLoaded", function(e){
-    boton.addEventListener("click", loged())
+    boton.onclick = loged()
 });

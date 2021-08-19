@@ -12,7 +12,7 @@ function tabla(alpha) {
         <tr>
           <td>${ valor.name }</td>
           <td>${ valor.description }</td>
-          <td>(${ valor.currency})` + ` ${ valor.cost }</td>
+          <td>(${ valor.currency})` + ` ${ valor.cost }</td> 
         </tr>
         `
     }
