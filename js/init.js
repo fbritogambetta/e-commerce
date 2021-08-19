@@ -43,12 +43,11 @@ var getJSONData = function(url){
 //Función que se ejecuta una vez que se haya lanzado el evento de
 //que el documento se encuentra cargado, es decir, se encuentran todos los
 //elementos HTML presentes.
-/*const yaRedireccione = localStorage.getItem("login");
-const checkLogin = () => {
-  if(yaRedireccione != "true") {
-    window.location="login.html";
+function checkLogin() {
+  if((localStorage.getItem("loged") != true)) {
+    window.location = "login.html"
   }
-};
+}
 document.addEventListener("DOMContentLoaded", function(e){
-  redireccionarALogin();
-}); */
+  checkLogin();
+});
