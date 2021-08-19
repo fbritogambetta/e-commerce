@@ -5,12 +5,13 @@ const boton = document.getElementById("submitInformation")
 const mail = document.getElementById("userEmail")
 const password = document.getElementById("userPassword")
 
-function loged() {
-    localStorage.setItem("loged", true)
-};
-document.addEventListener("DOMContentLoaded", function(e){
+function loged()    {
     if((mail.value != "") && (password.value != ""))    {
-        boton.addEventListener("click", loged);
+        localStorage.setItem("loged", true);
         window.location = "index.html";
     }
+};
+
+document.addEventListener("DOMContentLoaded", function(e){
+    boton.addEventListener("click", loged())
 });
