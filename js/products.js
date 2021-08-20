@@ -6,7 +6,6 @@ const url = "https://japdevdep.github.io/ecommerce-api/product/all.json"
 const cacillas = document.getElementById("productListInformation")
 
 function tabla(alpha) {
-    //cacillas.innerHTML = ``
     for(let valor of alpha)  {
         cacillas.innerHTML += `
         <tr>
@@ -19,7 +18,6 @@ function tabla(alpha) {
 }
 
 document.addEventListener("DOMContentLoaded", function (e) {
-    //
     fetch(url)
         .then(data => data.json())
         .then(data => {

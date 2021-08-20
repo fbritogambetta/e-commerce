@@ -45,10 +45,10 @@ var getJSONData = function(url){
 //elementos HTML presentes.
 
 const checkLogin = () =>  {
-  if(!sessionStorage.getItem("loged")) {
+  if(!sessionStorage.getItem("User")) {
     window.location = "login.html"
   }
 }
-document.addEventListener("DOMContentLoaded", function(e){
+document.addEventListener("DOMContentLoaded", function(e) {
   checkLogin();
 });
