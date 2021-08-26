@@ -139,11 +139,38 @@ a.custom-card:hover {
 .checked {
   color: orange;
 }
-table, thead, tbody, tr, td, th{
-    font-family:Georgia, 'Times New Roman', Times, serif;
+table, thead, tbody, tr {
+    font-family: 'Raleway', serif !important;
     table-layout: fixed;
     width: 100%;
     border-collapse: collapse;
-    border: 3px solid black;
-    text-align: center;
-  }
+    border-top: 1px solid black;
+    border: 1px solid rgba(0,0,0,.125);
+    text-align: left;
+    padding: 20px;
+}
+thead th {
+  font-family: 'Raleway', serif !important;
+    table-layout: fixed;
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+    padding: 13px;
+    background-color: #343A40;
+    color: white;
+}
+.filtro {
+  text-align: right;
+  font-family:Georgia, 'Times New Roman', Times, serif;
+  font-size: 14px;
+}
+.imgRedonda {
+  width: 140px;
+  height:125px;
+  border-radius:150px;
+  border: 3px solid blanchedalmond;
+}
+
+tr:hover td {
+  background-color: #f8f9fa;
+}

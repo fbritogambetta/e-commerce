@@ -5,13 +5,16 @@ const url = "https://japdevdep.github.io/ecommerce-api/product/all.json"
 
 const cacillas = document.getElementById("productListInformation")
 
+function filtrarOrdenar(valor)  {}
+
 function tabla(alpha) {
     for(let valor of alpha)  {
         cacillas.innerHTML += `
         <tr>
+          <td> <img class="imgRedonda" src="${ valor.imgSrc }"></td>
           <td>${ valor.name }</td>
           <td>${ valor.description }</td>
-          <td>(${ valor.currency})` + ` ${ valor.cost }</td> 
+          <td>${ valor.cost }` + `(${ valor.currency})</td> 
         </tr>
         `
     }
