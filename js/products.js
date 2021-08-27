@@ -2,10 +2,12 @@
 //que el documento se encuentra cargado, es decir, se encuentran todos los
 //elementos HTML presentes.
 const url = "https://japdevdep.github.io/ecommerce-api/product/all.json"
-
 const cacillas = document.getElementById("productListInformation")
 
-function filtrarOrdenar(valor)  {}
+function filtrarOrdenar(valor)  {
+    const eleccion = document.getElementById("ordenarPor").value
+    
+}
 
 function tabla(alpha) {
     for(let valor of alpha)  {
