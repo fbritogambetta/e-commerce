@@ -27,15 +27,17 @@
       <div>
         <h4 class>Listado de productos:</h4>
         <p class="filtro">
-          <input  type="text" id="precioMin" size="10"> Precio min. 
-          <input  type="text" id="precioMax" size="10"> Precio max.
-          <input  type="button" id="btn" value="Aplicar">          
+          <input type="search" id="buscador" size="40" placeholder="Buscador:">
+          Precio min.<input  type="number" id="precioMin" size="6"> 
+          Precio max.<input  type="number" id="precioMax" size="6"> 
           Ordenar por:
-          <select name="ordenarPor" id="ordenarPor">
-            <option value="1">precio ascendente</option>
-            <option value="2">precio descendiente</option>
-            <option value="3">A-Z</option>
-            <option value="4">Z-A</option>
+          <select id="ordenarPor">
+            <option value="asc">precio ascendente</option>
+            <option value="desc">precio descendiente</option>
+            <option value="masV">más vendidos</option>
+            <option value="menV">menos vendidos</option>
+            <option value="az">A-Z</option>
+            <option value="za">Z-A</option>
           </select>
         </p>
         <table id="productList">
