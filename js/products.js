@@ -8,6 +8,10 @@ const cargarLista = () => {
             filtrarOrdenar(data)
     })
 }
+const filtrarPorPrecio = (array, min, max) => {
+    array.sort(valor => min <= valor && valor <= max);
+    buscador(array);
+}
 function buscador(array) {
     let parametroDeBusqueda = document.getElementById("buscador").value;
     let text = parametroDeBusqueda.toLowerCase()
@@ -23,7 +27,7 @@ function buscador(array) {
 function filtrarOrdenar(array)  {
     const criterio = document.querySelector("select").value;
     const pMin = document.getElementById("precioMin").value;
-    const pMax = document.getElementById("precioMax").value
+    const pMax = document.getElementById("precioMax").value;
     if(criterio === "asc") {array.sort((a, b) => {
         if(a.cost > b.cost) return 1;
         if(a.cost < b.cost) return -1;
@@ -44,22 +48,11 @@ function filtrarOrdenar(array)  {
         if(a.soldCount < b.soldCount) return -1;
         return 0;})
     }
-    if(criterio === "az") {array.sort((a,b) => a.name.localeCompare(b.name))
-    }
-    if(criterio === "za") {array.sort((a,b) => b.name.localeCompare(a.name))
-    }
-    if(pMin !== "" || pMax !== "") {
-        let newArray = []
-        for(let i of array) {
-            if(i.cost >= pMin && i.cost <= pMax) {
-                newArray.push(i)
-            }
-            buscador(newArray)
-        }
-    }
-    if(pMin === "" && pMax === "") {
-        buscador(array)
-    }
+    if(criterio === "az") array.sort((a,b) => a.name.localeCompare(b.name));
+    if(criterio === "za") array.sort((a,b) => b.name.localeCompare(a.name));
+    if(pMin !== "" && pMax === "" ) {filtrarPorPrecio(array, pMin, 100000)};
+    if(pMin === "" && pMax !== "") {filtrarPorPrecio(array, 0, pMax)};
+    if(pMin===""&&pMax==="") {buscador(array)}
 }
 
 function tabla(alpha) {
