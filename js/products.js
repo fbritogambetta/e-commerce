@@ -8,26 +8,19 @@ const cargarLista = () => {
             filtrarOrdenar(data)
     })
 }
-const filtrarPorPrecio = (array, min, max) => {
-    array.sort(valor => min <= valor && valor <= max);
-    buscador(array);
+const filtrarPorPrecio = (array,min,max) => {
+    tabla(array.filter(valor=> valor.cost >= min && valor.cost <= max));
 }
 function buscador(array) {
     let parametroDeBusqueda = document.getElementById("buscador").value;
     let text = parametroDeBusqueda.toLowerCase()
-    let newArray = []
-    for(let i of array) {
-        if(i.name.includes(text) || i.description.includes(text)) {
-            newArray.push(i)
-        }
-    }
-    tabla(newArray)
+    tabla(array.filter(value => value.includes(text)))
 }
 
 function filtrarOrdenar(array)  {
     const criterio = document.querySelector("select").value;
-    const pMin = document.getElementById("precioMin").value;
-    const pMax = document.getElementById("precioMax").value;
+    const min = document.getElementById("precioMin").value;
+    const max = document.getElementById("precioMax").value;
     if(criterio === "asc") {array.sort((a, b) => {
         if(a.cost > b.cost) return 1;
         if(a.cost < b.cost) return -1;
@@ -50,16 +43,14 @@ function filtrarOrdenar(array)  {
     }
     if(criterio === "az") array.sort((a,b) => a.name.localeCompare(b.name));
     if(criterio === "za") array.sort((a,b) => b.name.localeCompare(a.name));
-    if(pMin !== "" && pMax === "" ) {filtrarPorPrecio(array, pMin, 100000)};
-    if(pMin === "" && pMax !== "") {filtrarPorPrecio(array, 0, pMax)};
-    if(pMin===""&&pMax==="") {buscador(array)}
+    filtrarPorPrecio(array,min,max)
 }
 
 function tabla(alpha) {
-    const cacillas = document.getElementById("productListInformation");
-    cacillas.innerHTML =``
+    const casillas = document.getElementById("productListInformation");
+    casillas.innerHTML =``
     for(let valor of alpha)  {
-        cacillas.innerHTML += `
+        casillas.innerHTML += `
         <tr>
           <td> <img class="imgRedonda" src="${ valor.imgSrc }"></td>
           <td>${ valor.name }</td>
@@ -75,5 +66,5 @@ document.addEventListener("DOMContentLoaded", function (e) {
     document.getElementById("ordenarPor").addEventListener("change", cargarLista);
     document.getElementById("precioMin").addEventListener("keypress", cargarLista)
     document.getElementById("precioMax").addEventListener("keypress", cargarLista)
-    document.getElementById("buscador").addEventListener("keypress", cargarLista)
+    //document.getElementById("buscador").addEventListener("keypress", buscador())
 });
