@@ -174,3 +174,7 @@ thead th {
 tr:hover td {
   background-color: #f8f9fa;
 }
+nav>div>a:not([href]):not([tabindex]).user{
+  color: white;
+  transition: ease-in-out color .15s;
+}

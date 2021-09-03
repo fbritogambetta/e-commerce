@@ -43,11 +43,21 @@ var getJSONData = function(url){
 //Función que se ejecuta una vez que se haya lanzado el evento de
 //que el documento se encuentra cargado, es decir, se encuentran todos los
 //elementos HTML presentes.
+const incertUser =()=> {
+  const user = sessionStorage.getItem("User")
+  const div = document.querySelector("nav>div")
+  const aBlock = document.createElement("a")
+  const aText = document.createTextNode(user)
+  aBlock.classList.add("py-2", "d-none", "d-md-inline-block", "user")
+  aBlock.appendChild(aText)
+  div.appendChild(aBlock)
+}
 
 const checkLogin = () =>  {
   if(!sessionStorage.getItem("User")) {
     window.location = "login.html"
   }
+  incertUser()
 }
 document.addEventListener("DOMContentLoaded", function(e) {
   checkLogin();
