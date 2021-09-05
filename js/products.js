@@ -8,9 +8,6 @@ const cargarLista = () => {
             buscador(data)
         })
 }
-const filtrarPorPrecio = (array, min, max) => {
-    tabla(array.filter(valor => valor.cost >= min && valor.cost <= max));
-}
 function buscador(array) {
     let newArray =  []
     const valor = document.getElementById("buscador");
@@ -61,7 +58,9 @@ function filtrarOrdenar(array) {
     if (criterio === "za") array.sort((a, b) => b.name.localeCompare(a.name));
     filtrarPorPrecio(array, min, max)
 }
-
+const filtrarPorPrecio = (array, min, max) => {
+    tabla(array.filter(valor => valor.cost >= min && valor.cost <= max));
+}
 function tabla(alpha) {
     const casillas = document.getElementById("productListInformation");
     casillas.innerHTML = ``
