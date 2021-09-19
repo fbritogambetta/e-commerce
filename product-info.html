@@ -26,9 +26,24 @@
     </div>
   </nav>
   <div id="content" class="container p-5">
-    <h2 id="name"></h2>
-    <div id="imgs"></div>
+    <h2 id="name"></h2><br>
+    <div id="imgs"></div><br>
     <p id="description"></p><br><p id="price"></p><br><p id="category"></p>    
+  </div>
+  <div id="score" class="container p-5">
+    <hr><h4>Valoración:</h4><hr>
+  </div>
+  <div class="container p-5">
+    <h4>Comentar:</h4>
+    <label for="score">Puntuar: <select name="score" id="scoreValue">
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+      <option value="5">5</option>
+    </select></label>
+    <input type="text" size="100">
+    <label for="button"><input type="button" id="button" value="Comentar"></label>
   </div>
   <footer class="text-muted">
     <div class="container">

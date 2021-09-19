@@ -66,15 +66,16 @@ function tabla(alpha) {
     casillas.innerHTML = ``
     for (let valor of alpha) {
         casillas.innerHTML += `
+        <a href="category-info.html">
         <tr>
         <td><img class="imgRedonda" src="${valor.imgSrc}"></td>
         <td>${valor.name}</td>
         <td>${valor.description}</td>
         <td>${valor.cost}` + `(${valor.currency})</td> 
-        </tr>`
+        </tr>
+        </a>`
     }
 }
-
 document.addEventListener("DOMContentLoaded", function (e) {
     cargarLista();
     document.getElementById("ordenarPor").addEventListener("change", cargarLista);
