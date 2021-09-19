@@ -37,5 +37,4 @@ const showScoreAndComments = () => {
 document.addEventListener("DOMContentLoaded", function (e) {
     showProductInfAndImg();
     showScoreAndComments();
-    document.getElementById("button").addEventListener("click", () => document.getElementById("comment").value.innerHTML="")
 });
