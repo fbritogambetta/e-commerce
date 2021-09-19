@@ -66,20 +66,19 @@ function tabla(alpha) {
     casillas.innerHTML = ``
     for (let valor of alpha) {
         casillas.innerHTML += `
-        <a href="category-info.html">
         <tr>
         <td><img class="imgRedonda" src="${valor.imgSrc}"></td>
         <td>${valor.name}</td>
         <td>${valor.description}</td>
         <td>${valor.cost}` + `(${valor.currency})</td> 
-        </tr>
-        </a>`
+        </tr>`
     }
 }
 document.addEventListener("DOMContentLoaded", function (e) {
     cargarLista();
     document.getElementById("ordenarPor").addEventListener("change", cargarLista);
-    document.getElementById("precioMin").addEventListener("keypress", cargarLista)
-    document.getElementById("precioMax").addEventListener("keypress", cargarLista)
-    document.getElementById("buscador").addEventListener("keypress", cargarLista)
+    document.getElementById("precioMin").addEventListener("keypress", cargarLista);
+    document.getElementById("precioMax").addEventListener("keypress", cargarLista);
+    document.getElementById("buscador").addEventListener("keypress", cargarLista);
+    document.getElementById("productListInformation").addEventListener("click", () => window.location = "product-info.html")
 });

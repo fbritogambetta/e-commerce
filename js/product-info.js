@@ -9,7 +9,7 @@ const showImgs = (array) => {
     const imgsLocation = array.images;
     const imgs = document.getElementById("imgs")
     for (let img of imgsLocation) {
-        imgs.innerHTML+='<img class="img-fluid img-thumbnail desplegar" src="'+ img +'">';
+        imgs.innerHTML += '<img class="img-fluid img-thumbnail desplegar" src="' + img + '">';
     }
 }
 const showProductInfAndImg = () => {
@@ -20,19 +20,22 @@ const showProductInfAndImg = () => {
         })
 }
 const showComments = (array) => {
-    for(let valor of array) {
-        document.getElementById("score").innerHTML+= '<h6>'+valor.user+'</h6><p>Puntuación: '+valor.score+'</p><p>'+valor.description+'</p><hr>'
-}}
+    for (let valor of array) {
+        document.getElementById("score").innerHTML += '<h6>' + valor.user + '</h6><p>Puntuación: ' + valor.score + '</p><p>' + valor.description + '</p><hr>'
+    }
+}
 const showScoreAndComments = () => {
     fetch(PRODUCT_INFO_COMMENTS_URL)
         .then(data => data.json())
         .then(data => {
             showComments(data)
-})}
+        })
+}
 //Función que se ejecuta una vez que se haya lanzado el evento de
 //que el documento se encuentra cargado, es decir, se encuentran todos los
 //elementos HTML presentes.
-document.addEventListener("DOMContentLoaded", function(e){
-    showProductInfAndImg()
-    showScoreAndComments()
+document.addEventListener("DOMContentLoaded", function (e) {
+    showProductInfAndImg();
+    showScoreAndComments();
+    document.getElementById("button").addEventListener("click", () => document.getElementById("comment").value.innerHTML="")
 });
