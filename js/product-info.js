@@ -35,8 +35,7 @@ const printCard = (array) => {
       <h5 class="card-title">${array.name}</h5>
       <p class="card-text">${array.description}</p>
       <a class="btn btn-primary">(${array.currency})${array.cost}</a>
-    </div>
-  </div>`
+    </div></div>`
 }
 const showProductInfAndImg = (array) => {
     fetch(array)

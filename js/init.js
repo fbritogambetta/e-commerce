@@ -7,58 +7,66 @@ const PRODUCT_INFO_COMMENTS_URL = "https://japdevdep.github.io/ecommerce-api/pro
 const CART_INFO_URL = "https://japdevdep.github.io/ecommerce-api/cart/987.json";
 const CART_BUY_URL = "https://japdevdep.github.io/ecommerce-api/cart/buy.json";
 
-var showSpinner = function(){
+var showSpinner = function () {
   document.getElementById("spinner-wrapper").style.display = "block";
 }
 
-var hideSpinner = function(){
+var hideSpinner = function () {
   document.getElementById("spinner-wrapper").style.display = "none";
 }
 
-var getJSONData = function(url){
-    var result = {};
-    showSpinner();
-    return fetch(url)
+var getJSONData = function (url) {
+  var result = {};
+  showSpinner();
+  return fetch(url)
     .then(response => {
       if (response.ok) {
         return response.json();
-      }else{
+      } else {
         throw Error(response.statusText);
       }
     })
-    .then(function(response) {
-          result.status = 'ok';
-          result.data = response;
-          hideSpinner();
-          return result;
+    .then(function (response) {
+      result.status = 'ok';
+      result.data = response;
+      hideSpinner();
+      return result;
     })
-    .catch(function(error) {
-        result.status = 'error';
-        result.data = error;
-        hideSpinner();
-        return result;
+    .catch(function (error) {
+      result.status = 'error';
+      result.data = error;
+      hideSpinner();
+      return result;
     });
 }
 
 //Función que se ejecuta una vez que se haya lanzado el evento de
 //que el documento se encuentra cargado, es decir, se encuentran todos los
 //elementos HTML presentes.
-const incertUser =()=> {
-  const user = sessionStorage.getItem("User")
-  const div = document.querySelector("nav>div")
-  const aBlock = document.createElement("a")
-  const aText = document.createTextNode(user)
-  aBlock.classList.add("py-2", "d-none", "d-md-inline-block", "user")
-  aBlock.appendChild(aText)
-  div.appendChild(aBlock)
+const incertUser = () => {
+  document.querySelector("nav").innerHTML = `
+  <div class="container d-flex flex-column flex-md-row justify-content-between">
+    <a class="py-2 d-none d-md-inline-block" href="index.html">Inicio</a>
+    <a class="py-2 d-none d-md-inline-block" href="categories.html">Categorías</a>
+    <a class="py-2 d-none d-md-inline-block" href="products.html">Productos</a>
+    <a class="py-2 d-none d-md-inline-block" href="sell.html">Vender</a>
+    <div class="dropdown">
+      <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      </button>
+      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+        <a class="dropdown-item" href="cart.html">Mi carrito</a>
+        <a class="dropdown-item" href="my-profile.html">Mi perfil</a>
+        <a class="dropdown-item" href="login.html" onclick="logOut()">Cerrar sesión</a>
+      </div>
+  </div>`
 }
 
-const checkLogin = () =>  {
-  if(!sessionStorage.getItem("User")) {
+const checkLogin = () => {
+  if (!sessionStorage.getItem("User")) {
     window.location = "login.html"
   }
   incertUser()
 }
-document.addEventListener("DOMContentLoaded", function(e) {
+document.addEventListener("DOMContentLoaded", function (e) {
   checkLogin();
 });
