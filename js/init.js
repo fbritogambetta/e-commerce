@@ -60,6 +60,7 @@ const incertUser = () => {
       </div>
   </div>`
 }
+const logOut = () => sessionStorage.clear();
 
 const checkLogin = () => {
   if (!sessionStorage.getItem("User")) {
