@@ -23,7 +23,7 @@ const showRelatedProducts = (array) => {
 }
 const printCardOfArray = (array1, array2) => {
     for(let value of array1.relatedProducts) {
-        let = arrayElement = array2[value];
+        let arrayElement = array2[value];
         printCard(arrayElement)
     }
 }
