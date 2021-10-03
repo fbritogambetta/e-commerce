@@ -206,3 +206,6 @@ nav>div>a:not([href]):not([tabindex]).user{
   width: 200px;
   height: 150px;
 }
+#relatedProducts{
+  display: flex;
+}
