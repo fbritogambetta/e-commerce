@@ -44,6 +44,7 @@ var getJSONData = function (url) {
 //que el documento se encuentra cargado, es decir, se encuentran todos los
 //elementos HTML presentes.
 const incertUser = () => {
+  const userName = sessionStorage.getItem("User")
   document.querySelector("nav").innerHTML = `
   <div class="container d-flex flex-column flex-md-row justify-content-between">
     <a class="py-2 d-none d-md-inline-block" href="index.html">Inicio</a>
@@ -51,8 +52,7 @@ const incertUser = () => {
     <a class="py-2 d-none d-md-inline-block" href="products.html">Productos</a>
     <a class="py-2 d-none d-md-inline-block" href="sell.html">Vender</a>
     <div class="dropdown">
-      <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-      </button>
+      <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">${userName}</button>
       <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
         <a class="dropdown-item" href="cart.html">Mi carrito</a>
         <a class="dropdown-item" href="my-profile.html">Mi perfil</a>
