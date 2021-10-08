@@ -15,13 +15,12 @@ const printProducts =(array)=>{
 }
 const calculateSubtotalAndTotal = () => {
    array[0].count = document.getElementById("productCount").value
+   
 }
-const showCartProducts= (array) => {
-    return fetch(array)
-        .then(data => data.json())
-        .then(data => {
-        return(data)
-    })
+const showCartProducts= async (array) => {
+    const data = await fetch(array);
+    const data_1 = await data.json();
+    return (data_1);
 }
 //Función que se ejecuta una vez que se haya lanzado el evento de
 //que el documento se encuentra cargado, es decir, se encuentran todos los
@@ -30,5 +29,5 @@ document.addEventListener("DOMContentLoaded", function(e){
     showCartProducts(CART_INFO_URL)
     .then((data)=>{array = (data.articles);})
     .then(()=> printProducts(array))
-    .then(()=> document.getElementById("productCount").addEventListener("click", calculateSubtotalAndTotal()))
+    document.getElementById("productCount").addEventListener("click", calculateSubtotalAndTotal())
 })
