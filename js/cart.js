@@ -13,9 +13,10 @@ const printProducts =(array)=>{
 
     }
 }
-const calculateSubtotalAndTotal = () => {
-   array[0].count = document.getElementById("productCount").value
-   
+const calculateSubtotalAndTotal = (alpha) => {
+   let actualCount = document.getElementById("productCount").value,
+   alpha
+
 }
 const showCartProducts= async (array) => {
     const data = await fetch(array);
