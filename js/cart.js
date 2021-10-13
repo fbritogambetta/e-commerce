@@ -1,4 +1,4 @@
-let array = []
+let algo = []
 const printProducts =(array)=>{
     const casillas = document.getElementById("productListInformation");
     for (let valor of array) {
@@ -15,7 +15,10 @@ const printProducts =(array)=>{
 }
 const calculateSubtotalAndTotal = (alpha) => {
    let actualCount = document.getElementById("productCount").value,
-   alpha
+   for (let value of alpha) {
+       value.count = actualCount
+   }
+   printProducts(alpha)
 
 }
 const showCartProducts= async (array) => {
@@ -28,7 +31,7 @@ const showCartProducts= async (array) => {
 //elementos HTML presentes.
 document.addEventListener("DOMContentLoaded", function(e){
     showCartProducts(CART_INFO_URL)
-    .then((data)=>{array = (data.articles);})
+    .then((data)=>{algo = (data.articles);})
     .then(()=> printProducts(array))
-    document.getElementById("productCount").addEventListener("click", calculateSubtotalAndTotal())
+    document.getElementById("productCount").addEventListener("click", calculateSubtotalAndTotal(algo))
 })
