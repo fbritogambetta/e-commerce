@@ -7,7 +7,7 @@ const printProducts =(array)=>{
         <td><img class="imgRedonda" src="${valor.src}"></td>
         <td>${valor.name}</td>
         <td><span id="unitCost">${valor.unitCost}</span><span id="productCurrency">(${valor.currency})</span></td>
-        <td><input  type="number" id="productCount" size="6" value="${valor.count}"></td>
+        <td><input  type="number" min="0" id="productCount" size="6" value="${valor.count}"></td>
         <td id="subtotal">${valor.unitCost*valor.count}(${valor.currency})</td>
         </tr>`
 
@@ -36,6 +36,6 @@ document.addEventListener("DOMContentLoaded", function(e){
     .then(()=> {
         printProducts(json);
         changeSubtotal();
-        document.getElementById("productCount").addEventListener("click", changeSubtotal);
+        document.getElementById("productCount").addEventListener("change", changeSubtotal);
     })
 })
