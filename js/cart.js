@@ -1,4 +1,4 @@
-let array = []
+let json = []
 const printProducts =(array)=>{
     const casillas = document.getElementById("productListInformation");
     for (let valor of array) {
@@ -23,16 +23,19 @@ const changeSubtotal = () => {
     const productCurrency = document.getElementById("productCurrency").innerHTML
     const productCount = document.getElementById("productCount").value;
     const subtotal = document.getElementById("subtotal");
+    const total = document.getElementById("total")
     subtotal.innerHTML=`${unitCost*productCount}${productCurrency}`
+    total.innerHTML=`Total: ${unitCost*productCount}${productCurrency}`
 }
 //Función que se ejecuta una vez que se haya lanzado el evento de
 //que el documento se encuentra cargado, es decir, se encuentran todos los
 //elementos HTML presentes.
 document.addEventListener("DOMContentLoaded", function(e){
     showCartProducts(CART_INFO_URL)
-    .then((data)=>{array = (data.articles);})
+    .then((data)=>{json = (data.articles);})
     .then(()=> {
-        printProducts(array);
+        printProducts(json);
+        changeSubtotal();
         document.getElementById("productCount").addEventListener("click", changeSubtotal);
     })
 })

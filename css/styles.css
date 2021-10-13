@@ -209,3 +209,6 @@ nav>div>a:not([href]):not([tabindex]).user{
 #relatedProducts{
   display: flex;
 }
+#total{
+  text-align: right;
+}
