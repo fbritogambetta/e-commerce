@@ -9,8 +9,7 @@ const printProducts =(array)=>{
         <td><span id="unitCost">${valor.unitCost}</span><span id="productCurrency">(${valor.currency})</span></td>
         <td><input  type="number" min="0" id="productCount" size="6" value="${valor.count}"></td>
         <td id="subtotal">${valor.unitCost*valor.count}(${valor.currency})</td>
-        </tr>`
-
+        </tr>`;
     }
 }
 const showCartProducts= async (array) => {
@@ -20,12 +19,12 @@ const showCartProducts= async (array) => {
 }
 const changeSubtotal = () => {
     const unitCost = document.getElementById("unitCost").innerHTML;
-    const productCurrency = document.getElementById("productCurrency").innerHTML
+    const productCurrency = document.getElementById("productCurrency").innerHTML;
     const productCount = document.getElementById("productCount").value;
     const subtotal = document.getElementById("subtotal");
-    const total = document.getElementById("total")
-    subtotal.innerHTML=`${unitCost*productCount}${productCurrency}`
-    total.innerHTML=`Total: ${unitCost*productCount}${productCurrency}`
+    const total = document.getElementById("total");
+    subtotal.innerHTML=`${unitCost*productCount}${productCurrency}`;
+    total.innerHTML=`Total: ${unitCost*productCount}${productCurrency}`;
 }
 //Función que se ejecuta una vez que se haya lanzado el evento de
 //que el documento se encuentra cargado, es decir, se encuentran todos los
