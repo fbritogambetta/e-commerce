@@ -9,14 +9,15 @@ const cargarLista = () => {
         })
 }
 function buscador(array) {
-    let newArray =  []
+    let newArray = []
     const valor = document.getElementById("buscador");
     const parametro = valor.value.toLowerCase();
-    for(let element of array){
+    for (let element of array) {
         let nombre = element.name.toLowerCase();
         let description = element.description.toLowerCase()
-        if(nombre.indexOf(parametro) !== -1 || description.indexOf(parametro) !== -1){
-            newArray.push(element)}
+        if (nombre.indexOf(parametro) !== -1 || description.indexOf(parametro) !== -1) {
+            newArray.push(element)
+        }
 
     }
     filtrarOrdenar(newArray)
@@ -66,12 +67,20 @@ function tabla(alpha) {
     casillas.innerHTML = ``
     for (let valor of alpha) {
         casillas.innerHTML += `
-        <tr>
-        <td><img class="imgRedonda" src="${valor.imgSrc}"></td>
-        <td>${valor.name}</td>
-        <td>${valor.description}</td>
-        <td>${valor.cost}` + `(${valor.currency})</td> 
-        </tr>`
+        <div class="card mb-3" style="max-width: 540px;">
+  <div class="row no-gutters">
+    <div class="col-md-4">
+      <img src="${valor.imgSrc}" class="card-img" alt="...">
+    </div>
+    <div class="col-md-8">
+      <div class="card-body">
+        <h5 class="card-title">${valor.name}</h5>
+        <p class="card-text">${valor.description}</p>
+        <p class="card-text">Precio: ${valor.cost} (${valor.currency}</p>
+      </div>
+    </div>
+  </div>
+</div>`
     }
 }
 document.addEventListener("DOMContentLoaded", function (e) {
