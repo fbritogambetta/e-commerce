@@ -1,3 +1,4 @@
+"use strict";
 //Función que se ejecuta una vez que se haya lanzado el evento de
 //que el documento se encuentra cargado, es decir, se encuentran todos los
 //elementos HTML presentes.
@@ -70,7 +71,7 @@ function tabla(alpha) {
         <div class="card mb-3">
         <div class="row no-gutters">
             <div class="col-md-4">
-            <img src="${valor.imgSrc}" class="card-img" alt="...">
+            <img src="${valor.imgSrc}" class="card-img" alt="foto ${valor.name}">
             </div>
             <div class="col-md-8">
             <div class="card-body">
