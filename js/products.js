@@ -63,24 +63,24 @@ const filtrarPorPrecio = (array, min, max) => {
     tabla(array.filter(valor => valor.cost >= min && valor.cost <= max));
 }
 function tabla(alpha) {
-    const casillas = document.getElementById("productListInformation");
+    const casillas = document.getElementById("productList");
     casillas.innerHTML = ``
     for (let valor of alpha) {
         casillas.innerHTML += `
-        <div class="card mb-3" style="max-width: 540px;">
-  <div class="row no-gutters">
-    <div class="col-md-4">
-      <img src="${valor.imgSrc}" class="card-img" alt="...">
-    </div>
-    <div class="col-md-8">
-      <div class="card-body">
-        <h5 class="card-title">${valor.name}</h5>
-        <p class="card-text">${valor.description}</p>
-        <p class="card-text">Precio: ${valor.cost} (${valor.currency}</p>
-      </div>
-    </div>
-  </div>
-</div>`
+        <div class="card mb-3">
+        <div class="row no-gutters">
+            <div class="col-md-4">
+            <img src="${valor.imgSrc}" class="card-img" alt="...">
+            </div>
+            <div class="col-md-8">
+            <div class="card-body">
+                <h5 class="card-title">${valor.name}</h5>
+                <p class="card-text">${valor.description}</p>
+                <p class="card-text">Precio: ${valor.cost} (${valor.currency}</p>
+            </div>
+            </div>
+        </div>
+        </div>`
     }
 }
 document.addEventListener("DOMContentLoaded", function (e) {
@@ -89,5 +89,5 @@ document.addEventListener("DOMContentLoaded", function (e) {
     document.getElementById("precioMin").addEventListener("keypress", cargarLista);
     document.getElementById("precioMax").addEventListener("keypress", cargarLista);
     document.getElementById("buscador").addEventListener("keypress", cargarLista);
-    document.getElementById("productListInformation").addEventListener("click", () => window.location = "product-info.html")
+    document.getElementById("productList").addEventListener("click", () => window.location = "product-info.html")
 });
