@@ -44,12 +44,64 @@
     </div>
   </nav>
   <div class="container p-5">
-    <div class="alert alert-danger" role="alert" style="position: relative; width:auto; top: 0;">
-      <h4 class="alert-heading">¡A trabajar! :)</h4>
-      <p>Esta sección corresponde a: Entrega 6 (Fecha de entrega: 31/10/2021).</p>
-      <hr>
-      <p class="mb-0">Para saber qué debes hacer, fijate en la actividad en CREA correspondiente a esta entrega.</p>
-    </div>
+    <div class="card">
+      <div class="card-body">
+          <div class="row">
+              <div class="col-md-12">
+                  <h4>Mi perfil</h4>
+                  <hr>
+              </div>
+          </div>
+          <div class="row">
+              <div class="col-md-12">
+                  <form>
+                        <div class="form-group row">
+                          <label for="username" class="col-4 col-form-label">Nombre de Usuario*</label> 
+                          <div class="col-8">
+                            <input id="username" name="username" placeholder="Username" class="form-control here" required="required" type="text">
+                          </div>
+                        </div>
+                        <div class="form-group row">
+                          <label for="name" class="col-4 col-form-label">Nombre</label> 
+                          <div class="col-8">
+                            <input id="name" name="name" placeholder="First Name" class="form-control here" type="text">
+                          </div>
+                        </div>
+                        <div class="form-group row">
+                          <label for="lastname" class="col-4 col-form-label">Apellido</label> 
+                          <div class="col-8">
+                            <input id="lastname" name="lastname" placeholder="Last Name" class="form-control here" type="text">
+                          </div>
+                        </div>
+                        <div class="form-group row">
+                          <label for="age" class="col-4 col-form-label">Edad</label> 
+                          <div class="col-8">
+                            <input id="age" name="age" placeholder="Edad" class="form-control here" required="required" type="number">
+                          </div>
+                        </div>
+                        <div class="form-group row">
+                          <label for="email" class="col-4 col-form-label">Email*</label> 
+                          <div class="col-8">
+                            <input id="email" name="email" placeholder="Email" class="form-control here" required="required" type="text">
+                          </div>
+                        </div>
+                        <div class="form-group row">
+                          <label for="phone" class="col-4 col-form-label">Telefono de contacto*</label> 
+                          <div class="col-8">
+                            <input id="phone" name="phone" placeholder="Cel/Tel" class="form-control here" required="required" type="text">
+                          </div>
+                        </div>
+                        <div class="form-group row">
+                          <div class="offset-4 col-8">
+                            <button id="btnSubmit" name="submit" type="submit" class="btn btn-primary">Actualizar mi perfil</button>
+                          </div>
+                        </div>
+                      </form>
+              </div>
+          </div>
+          
+      </div>
+</div>
   </div>
   <footer class="text-muted bg-light">
     <div class="container">

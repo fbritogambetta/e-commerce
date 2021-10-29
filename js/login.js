@@ -6,8 +6,8 @@ const loged = () =>  {
     const username = document.getElementById("userEmail").value
     const password = document.getElementById("password").value
     if(username && password)  {
-        sessionStorage.setItem("User", username);
-        window.location="index.html";
+        localStorage.setItem("data", username);
+        window.location="my-profile.html";
     }   else    {
         alert("Complete los campos con información valida, gracias")
     }
