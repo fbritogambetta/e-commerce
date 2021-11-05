@@ -25,7 +25,7 @@ const changeSubtotal = () => {
     const total = document.getElementById("total");
     const shippingType = document.querySelector("input[name=shippingOptions]:checked").value;
     subtotal.innerHTML=`${unitCost*productCount}${productCurrency}`;
-    total.innerHTML=`<div>Valor compra: ${Math.round(unitCost*productCount)}${productCurrency}</div><div>Costo de envio: ${Math.round((unitCost*productCount*shippingType)-(unitCost*productCount))}</div><hr><div>Total${Math.round(unitCost*productCount*shippingType)}${productCurrency}</div>`;
+    total.innerHTML=`<div>Valor compra: ${(unitCost*productCount).toFixed(2)} ${productCurrency}</div><div>Costo de envio: ${((unitCost*productCount*shippingType)-(unitCost*productCount)).toFixed(2)} ${productCurrency}</div><hr><div>Total${(unitCost*productCount*shippingType).toFixed(2)} ${productCurrency}</div>`;
 }
 //Función que se ejecuta una vez que se haya lanzado el evento de
 //que el documento se encuentra cargado, es decir, se encuentran todos los
