@@ -23,12 +23,9 @@ const changeSubtotal = () => {
     const productCount = document.getElementById("productCount").value;
     const subtotal = document.getElementById("subtotal");
     const total = document.getElementById("total");
+    const shippingType = document.querySelector("input[name=shippingOptions]:checked").value;
     subtotal.innerHTML=`${unitCost*productCount}${productCurrency}`;
-    total.innerHTML=`Total: ${unitCost*productCount}${productCurrency}`;
-}
-const calculateShippingAndTotal = () => {
-    let paymentType = document.getElementsByName("paymentType").value;
-    console.log(paymentType)
+    total.innerHTML=`<div>Valor compra: ${Math.round(unitCost*productCount)}${productCurrency}</div><div>Costo de envio: ${Math.round((unitCost*productCount*shippingType)-(unitCost*productCount))}</div><hr><div>Total${Math.round(unitCost*productCount*shippingType)}${productCurrency}</div>`;
 }
 //Función que se ejecuta una vez que se haya lanzado el evento de
 //que el documento se encuentra cargado, es decir, se encuentran todos los
@@ -39,7 +36,7 @@ document.addEventListener("DOMContentLoaded", function(e){
     .then(()=> {
         printProducts(json);
         changeSubtotal();
-        document.getElementById("productCount").addEventListener("change", changeSubtotal);
-        document.getElementById("buy").addEventListener("click", calculateShippingAndTotal);
+        document.getElementById("productCount").addEventListener("click", changeSubtotal);
+        document.getElementById("shippingOptions").addEventListener("click", changeSubtotal);
     })
 })

@@ -41,24 +41,33 @@
       <tbody id="productListInformation">
       </tbody>          
     </table> <hr>
-    <div>
-      
-      <label for="direction">Dirección: <input type="text" name="direction" placeholder="calle, número de puerta y esquina" size="70"></label>
-      <label for="direction">País: <input type="text" name="direction"></label>
+    <form>
       <div>
-        <p>Forma de Pago:</p>
-        <button name="paymentype" type="button" class="btn btn-secondary">Tarjeta de credito</button>
-        <button name="paymentType" type="button" class="btn btn-secondary">Transferencia bancaria</button>
+          <label for="direction">Dirección: <input required type="text" name="direction" placeholder="calle, número de puerta y esquina" size="70"></label>
+          <label for="direction">País: <input required type="text" name="direction"></label>
+        <div class="btn-group btn-group-toggle" data-toggle="buttons">
+          <label class="btn btn-primary active">
+            <input type="radio" name="paymentOptions" id="option1" checked> Tarjeta de credito
+          </label>
+          <label class="btn btn-primary">
+            <input type="radio" name="paymentsOptions" id="option2"> Transferencia bancaria
+          </label>
+        </div><br>
+        <p>Tipo de envio:</p>
+        <div id="shippingOptions" class="btn-group btn-group">
+          <label class="btn btn-primary active">
+            <input type="radio" name="shippingOptions" value="1.150" id="option1" checked> Premium (2-5 días) - Costo del 15% sobre el subtotal
+          </label>
+          <label class="btn btn-primary">
+            <input type="radio" name="shippingOptions" value="1.070" id="option2"> Express (5-8 días) - Costo del 7% sobre el subtotal
+          </label>
+          <label class="btn btn-primary">
+            <input type="radio" name="shippingOptions" value="1.050" id="option3" > Standard (12 a 15 días) - Costo del 5% sobre el subtotal
+          </label>
+        </div>
+        <hr><button id="buy" type="submit" class="btn btn-primary">Confirmar compra</button> <h4 id="total"></h4><h4 id="total"></h4>
       </div>
-    </div> <br>
-    <p>Tipo de envio:</p>
-    <div class="btn-group" role="group" aria-label="Basic example">
-      <button name="shippingType" value="0.15" type="button" class="btn btn-secondary">Premium (2-5 días) - Costo del 15% sobre el subtotal.</button>
-      <button name="shippingType" value="0.07" type="button" class="btn btn-secondary">Express (5-8 días) - Costo del 7% sobre el subtotal.</button>
-      <button name="shippingType" value="0.05" type="button" class="btn btn-secondary">Standard (12 a 15 días) - Costo del 5% sobre el subtotal.</button>
-    </div>
-    <hr> <button id="buy" type="button" class="btn btn-secondary">Confirmar compra</button> <h4 id="total"></h4><h4 id="total"></h4>
-  </div>
+    </form>
   <div id="spinner-wrapper">
     <div class="lds-ring">
       <div></div>
