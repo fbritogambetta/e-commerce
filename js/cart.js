@@ -26,6 +26,10 @@ const changeSubtotal = () => {
     subtotal.innerHTML=`${unitCost*productCount}${productCurrency}`;
     total.innerHTML=`Total: ${unitCost*productCount}${productCurrency}`;
 }
+const calculateShippingAndTotal = () => {
+    let paymentType = document.getElementsByName("paymentType").value;
+    console.log(paymentType)
+}
 //Función que se ejecuta una vez que se haya lanzado el evento de
 //que el documento se encuentra cargado, es decir, se encuentran todos los
 //elementos HTML presentes.
@@ -36,5 +40,6 @@ document.addEventListener("DOMContentLoaded", function(e){
         printProducts(json);
         changeSubtotal();
         document.getElementById("productCount").addEventListener("change", changeSubtotal);
+        document.getElementById("buy").addEventListener("click", calculateShippingAndTotal);
     })
 })

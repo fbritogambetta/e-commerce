@@ -47,17 +47,17 @@
       <label for="direction">País: <input type="text" name="direction"></label>
       <div>
         <p>Forma de Pago:</p>
-        <button type="button" class="btn btn-secondary">Tarjeta de credito</button>
-        <button type="button" class="btn btn-secondary">Transferencia bancaria</button>
+        <button name="paymentype" type="button" class="btn btn-secondary">Tarjeta de credito</button>
+        <button name="paymentType" type="button" class="btn btn-secondary">Transferencia bancaria</button>
       </div>
     </div> <br>
     <p>Tipo de envio:</p>
     <div class="btn-group" role="group" aria-label="Basic example">
-      <button type="button" class="btn btn-secondary">Premium (2-5 días) - Costo del 15% sobre el subtotal.</button>
-      <button type="button" class="btn btn-secondary">Express (5-8 días) - Costo del 7% sobre el subtotal.</button>
-      <button type="button" class="btn btn-secondary">Standard (12 a 15 días) - Costo del 5% sobre el subtotal.</button>
+      <button name="shippingType" value="0.15" type="button" class="btn btn-secondary">Premium (2-5 días) - Costo del 15% sobre el subtotal.</button>
+      <button name="shippingType" value="0.07" type="button" class="btn btn-secondary">Express (5-8 días) - Costo del 7% sobre el subtotal.</button>
+      <button name="shippingType" value="0.05" type="button" class="btn btn-secondary">Standard (12 a 15 días) - Costo del 5% sobre el subtotal.</button>
     </div>
-    <hr> <button type="button" class="btn btn-secondary">Confirmar compra</button> <h4 id="total"></h4><h4 id="total"></h4>
+    <hr> <button id="buy" type="button" class="btn btn-secondary">Confirmar compra</button> <h4 id="total"></h4><h4 id="total"></h4>
   </div>
   <div id="spinner-wrapper">
     <div class="lds-ring">
