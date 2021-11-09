@@ -25,7 +25,17 @@ const changeSubtotal = () => {
     const total = document.getElementById("total");
     const shippingType = document.querySelector("input[name=shippingOptions]:checked").value;
     subtotal.innerHTML=`${unitCost*productCount}${productCurrency}`;
-    total.innerHTML=`<div>Valor compra: ${(unitCost*productCount).toFixed(2)} ${productCurrency}</div><div>Costo de envio: ${((unitCost*productCount*shippingType)-(unitCost*productCount)).toFixed(2)} ${productCurrency}</div><hr><div>Total${(unitCost*productCount*shippingType).toFixed(2)} ${productCurrency}</div>`;
+    total.innerHTML=`<div>Valor compra: ${(unitCost*productCount).toFixed(2)} ${productCurrency}</div><div>Costo de envio: ${((unitCost*productCount*shippingType)-(unitCost*productCount)).toFixed(2)} ${productCurrency}</div><hr><div>Total: ${(unitCost*productCount*shippingType).toFixed(2)} ${productCurrency}</div>`;
+}
+const showModalData = () => {
+    let data = JSON.parse(localStorage.getItem("data"));
+    let direction = document.getElementsByName("direction").innerHTML;
+    let paymentOptions = document.querySelector("input[name=paymentOptions]:checked").innerHTML;
+    let shippingOptions = document.querySelector("input[name=shippingOptions]:checked").innerHTML;
+    console.log(data)
+    console.log(direction)
+    console.log(paymentOptions)
+    console.log(shippingOptions)
 }
 //Función que se ejecuta una vez que se haya lanzado el evento de
 //que el documento se encuentra cargado, es decir, se encuentran todos los
