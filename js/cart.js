@@ -29,13 +29,15 @@ const changeSubtotal = () => {
 }
 const showModalData = () => {
     let data = JSON.parse(localStorage.getItem("data"));
-    let direction = document.getElementsByName("direction").innerHTML;
-    let paymentOptions = document.querySelector("input[name=paymentOptions]:checked").innerHTML;
-    let shippingOptions = document.querySelector("input[name=shippingOptions]:checked").innerHTML;
-    console.log(data)
-    console.log(direction)
-    console.log(paymentOptions)
-    console.log(shippingOptions)
+    let direction = document.getElementById("direction").value;
+    let country = document.getElementById("country").value;
+    let paymentOptions = document.querySelector("input[name=paymentOptions]:checked").value;
+    let shippingOptions = document.querySelector("input[name=shippingOptions]:checked").title;
+    const unitCost = document.getElementById("unitCost").innerHTML;
+    const productCurrency = document.getElementById("productCurrency").innerHTML;
+    const productCount = document.getElementById("productCount").value;
+    const shippingType = document.querySelector("input[name=shippingOptions]:checked").value;
+    document.getElementById("modalData").innerHTML=`<p>Cliente: ${data.name} ${data.lastname}</p><p>Dirección de envio: ${direction}, ${country}</p><p>Forma de pago: ${paymentOptions}</p><p>Forma de envio: ${shippingOptions}</p><hr><p align=right >Total a pagar: ${(unitCost*productCount*shippingType).toFixed(2)} ${productCurrency}</p>`
 }
 
 //Función que se ejecuta una vez que se haya lanzado el evento de
