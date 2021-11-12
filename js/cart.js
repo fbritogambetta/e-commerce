@@ -37,6 +37,7 @@ const showModalData = () => {
     console.log(paymentOptions)
     console.log(shippingOptions)
 }
+
 //Función que se ejecuta una vez que se haya lanzado el evento de
 //que el documento se encuentra cargado, es decir, se encuentran todos los
 //elementos HTML presentes.
@@ -48,5 +49,9 @@ document.addEventListener("DOMContentLoaded", function(e){
         changeSubtotal();
         document.getElementById("productCount").addEventListener("click", changeSubtotal);
         document.getElementById("shippingOptions").addEventListener("click", changeSubtotal);
+        document.getElementById("buy").addEventListener("click", (e)=>{
+            e.preventDefault();
+            showModalData;
+        })
     })
 })
