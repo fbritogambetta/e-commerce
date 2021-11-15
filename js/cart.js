@@ -33,13 +33,20 @@ const showModalData = () => {
     let country = document.getElementById("country").value;
     let paymentOptions = document.querySelector("input[name=paymentOptions]:checked").value;
     let shippingOptions = document.querySelector("input[name=shippingOptions]:checked").title;
-    const unitCost = document.getElementById("unitCost").innerHTML;
-    const productCurrency = document.getElementById("productCurrency").innerHTML;
-    const productCount = document.getElementById("productCount").value;
-    const shippingType = document.querySelector("input[name=shippingOptions]:checked").value;
-    document.getElementById("modalData").innerHTML=`<p>Cliente: ${data.name} ${data.lastname}</p><p>Dirección de envio: ${direction}, ${country}</p><p>Forma de pago: ${paymentOptions}</p><p>Forma de envio: ${shippingOptions}</p><hr><p align=right >Total a pagar: ${(unitCost*productCount*shippingType).toFixed(2)} ${productCurrency}</p>`
+    if(direction !== "" && country !== ""){
+        const unitCost = document.getElementById("unitCost").innerHTML;
+        const productCurrency = document.getElementById("productCurrency").innerHTML;
+        const productCount = document.getElementById("productCount").value;
+        const shippingType = document.querySelector("input[name=shippingOptions]:checked").value;
+        document.getElementById("modalData").innerHTML=`<p>Cliente: ${data.name} ${data.lastname}</p><p>Dirección de envio: ${direction}, ${country}</p><p>Forma de pago: ${paymentOptions}</p><p>Forma de envio: ${shippingOptions}</p><hr><p align=right >Total a pagar: ${(unitCost*productCount*shippingType).toFixed(2)} ${productCurrency}</p>`;
+        (function(){$(function(){$("#exampleModal").modal()});}());
+    }
+    else{alert("Complete todos los campos correctamente para realizar su compra, gracias")}
+};
+const boughtConfirmed = () =>{
+    alert("Su compra se ha realizado con exito, gracias")
+    location.href="index.html"
 }
-
 //Función que se ejecuta una vez que se haya lanzado el evento de
 //que el documento se encuentra cargado, es decir, se encuentran todos los
 //elementos HTML presentes.

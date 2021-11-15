@@ -65,7 +65,7 @@
             <input type="radio" name="shippingOptions" title="Standard" value="1.050" id="option3" > Standard (12 a 15 días) - Costo del 5% sobre el subtotal
           </label>
         </div>
-        <hr><button id="buy" type="submit" class="btn btn-primary"  data-toggle="modal" data-target="#exampleModal" onclick="showModalData()" >Confirmar compra</button> <h4 id="total"></h4><h4 id="total"></h4>
+        <hr><button id="buy" type="submit" class="btn btn-primary" onclick="showModalData()" >Confirmar compra</button> <h4 id="total"></h4><h4 id="total"></h4>
       </div>
       <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
@@ -80,7 +80,7 @@
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-              <button type="button" class="btn btn-primary">Confirmar compra:</button>
+              <button type="button" class="btn btn-primary" onclick="boughtConfirmed()">Confirmar compra:</button>
             </div>
           </div>
         </div>
@@ -103,4 +103,5 @@
   <script src="js/cart.js"></script>
 </body>
 </html>
+
 
