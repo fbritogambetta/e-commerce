@@ -1,5 +1,9 @@
 let express = require("express");
 let app = express();
+let cors = require("cors");
+
+app.use(cors());
+
 let categories = [
     {
         "name": "Autos",
@@ -155,6 +159,7 @@ let cartInfo = {
     ]
 }
 let cartBuy = {"msg":"¡Has comprado con éxito!"};
+
 
 app.get("/categories", (req, res)=> res.json(categories));
 app.get("/publishProducts", (req, res)=> res.json(publishProducts));
