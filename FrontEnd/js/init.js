@@ -1,11 +1,11 @@
 const CATEGORIES_URL = "http://localhost:3000/categories";
-const PUBLISH_PRODUCT_URL = "http://local:3000/publishProducts";
-const CATEGORY_INFO_URL = "http://local:3000/categoriesInfo";
-const PRODUCTS_URL = "http://localhost:3000/categories";
-const PRODUCT_INFO_URL = "http://local:3000/productInfo";
-const PRODUCT_INFO_COMMENTS_URL = "http://local:3000/producInfoComments";
-const CART_INFO_URL = "http://local:3000/cartInfo";
-const CART_BUY_URL = "http://local:3000/cartBuy";
+const PUBLISH_PRODUCT_URL = "http://localhost:3000/publishProducts";
+const CATEGORY_INFO_URL = "http://localhost:3000/categoriesInfo";
+const PRODUCTS_URL = "http://localhost:3000/products";
+const PRODUCT_INFO_URL = "http://localhost:3000/productInfo";
+const PRODUCT_INFO_COMMENTS_URL = "http://localhost:3000/producInfoComments";
+const CART_INFO_URL = "http://localhost:3000/cartInfo";
+const CART_BUY_URL = "http://localhost:3000/cartBuy";
 
 var showSpinner = function () {
   document.getElementById("spinner-wrapper").style.display = "block";
